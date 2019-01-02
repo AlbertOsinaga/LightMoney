@@ -10,7 +10,7 @@
     <SchemaVersion>
     </SchemaVersion>
     <ProjectTypeGuids>{DA98106F-DEFA-4A62-8804-0BD2F166A45D};{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{FAE04EC0-301F-11d3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{80d22603-74d2-41af-a76a-04595cb9b8a6}</ProjectGuid>
+    <ProjectGuid>{80D22603-74D2-41AF-A76A-04595CB9B8A6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>LightSwitchApplication</RootNamespace>
     <AssemblyName>LightMoneyApp.DesktopClient</AssemblyName>
@@ -226,6 +226,12 @@
     </ServiceMetadataReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\LightMoneyApp.Server\DataSources\ApplicationData\Moneda.lsml.cs">
+      <Link>UserCode\Shared\Moneda.lsml.cs</Link>
+    </Compile>
+    <Compile Include="..\LightMoneyApp.Server\DataSources\ApplicationData\Parametro.lsml.cs">
+      <Link>UserCode\Shared\Parametro.lsml.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -235,9 +241,12 @@
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\OutOfBrowserSettings.xml" />
     <ClientResource Include="Properties\Config.xml" />
+    <LightSwitchModel Include="Properties\Proxies.lsml" />
+    <LightSwitchModel Include="Screens\ParametrosGrid.lsml" />
+    <LightSwitchModel Include="Screens\MonedasGrid.lsml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Screens\" />
+    <Folder Include="Properties\ApplicationData\" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="default.htm">
@@ -255,4 +264,17 @@
   </Target>
   <Target Name="AfterBuild">
   </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+      <FlavorProperties GUID="{DA98106F-DEFA-4A62-8804-0BD2F166A45D}" Configuration="Debug|Any CPU">
+        <SpecializedConfiguration />
+      </FlavorProperties>
+      <FlavorProperties GUID="{DA98106F-DEFA-4A62-8804-0BD2F166A45D}" Configuration="Release|Any CPU">
+        <SpecializedConfiguration />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

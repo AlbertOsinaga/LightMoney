@@ -25,14 +25,38 @@
           Value="Service that provides access to security-related data." />
       </EntityContainerGroupProperty.Attributes>
     </EntityContainerGroupProperty>
+    <EntityContainerGroupProperty
+      Name="ApplicationData"
+      EntityContainer="ApplicationData" />
   </EntityContainerGroup>
+  <GlobalAttributeGroup>
+    <GlobalAttributeGroup.Attributes>
+      <Proxy
+        Target="ServiceInterface:LightSwitchServiceApplicationGroup" />
+    </GlobalAttributeGroup.Attributes>
+  </GlobalAttributeGroup>
+  <Application.Commands>
+    <ApplicationCommand
+      Name="ScreenCommandShowParametrosGrid"
+      Target="!module/Methods[ShowParametrosGrid]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowMonedasGrid"
+      Target="!module/Methods[ShowMonedasGrid]" />
+  </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
-      Name="Tasks">
+      Name="Tasks"
+      DefaultItem="!module/NavigationItems[Tasks]/Children[MonedasGrid]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
-          Value="Tasks" />
+          Value="Ajustes" />
       </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="ParametrosGrid"
+        Command="!module/Commands[ScreenCommandShowParametrosGrid]" />
+      <ApplicationNavigationLink
+        Name="MonedasGrid"
+        Command="!module/Commands[ScreenCommandShowMonedasGrid]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">
